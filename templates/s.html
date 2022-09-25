@@ -1,0 +1,108 @@
+
+  <link rel="stylesheet" href="../static/1.css"/>
+  <div class="login-box">
+    <h2>Student Academic Project Price Predictor</h2>
+    <form method="POST" ,action="/">
+      <div class="user-box">
+        <!--<label>Degree</label><br><br>-->
+        <select name="degree" id="degree" required>
+          <option selected>Select Your Degree</option>
+          <option value="B-Tech" name="degree">B-Tech</option>
+          <option value="M-Tech" name="degree">M-Tech</option>
+        </select>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <select name="domain" id="type">
+          <option name="domain" value="item0">Select Your Domain</option>
+          <option name="domain" value="Artificial Intelligence">Artificial Intelligence</option>
+          <option name="domain" value="Electronics">Electronics</option>
+      </select>
+      <select name="course" id="size">
+          <option value="">Select Your Sub Domain</option>
+      </select>
+      <script>
+        $(document).ready(function () {
+            $("#type").change(function () {
+                var val = $(this).val();
+                if (val == "Artificial Intelligence") {
+                    $("#size").html("<option value=''>Select Your Sub Domain</option><option value='Computer Vision'>Computer Vision</option><option value='Natural Language Processing'>Natural Language Processing</option><option value='Deep Learning'>Deep Learning</option>");
+                } else if (val == "Electronics") {
+                    $("#size").html("<option value=''>Select Your Sub Domain</option><option value='Embedded Systems'>Embedded Systems</option><option value='IOT + AI'>IOT + AI</option><option value='Robotics'>Robotics</option><option value='MATLAB'>MATLAB</option><option value='HFSS'>HFSS</option>");
+                } else if (val == "item0") {
+                    $("#size").html("<option value=''>Select Your Sub Domain</option>");
+                }
+            });
+        });
+        </script>
+        <select name="level" id="level">
+          <option selected>Select Your Level</option>
+          <option value="Easy" name="level">Easy</option>
+          <option value="Moderate" name="level">Moderate</option>
+          <option value="Advanced" name="level">Advanced</option>
+        </select>
+        <select name="type" id="type1">
+          <option selected>Select Your Type</option>
+          <option value="Major" name="type">Major</option>
+          <option value="Minor" name="type">Minor</option>
+        </select>
+        <select name="doc" id="doc">
+          <option selected value="item0">Documentation Needed?</option>
+          <option value="Yes" name="doc">Yes</option>
+          <option value="No" name="doc">No</option>
+        </select>
+        <select name="plag" id="plag">
+          <option selected>Plagarised?</option>
+          <option value="Yes" name="plag">Yes</option>
+          <option value="No" name="plag">No</option>
+        </select>
+        <script>
+          $(document).ready(function () {
+              $("#doc").change(function () {
+                  var val = $(this).val();
+                  if (val == "Yes") {
+                      $("#plag").html("<option value=''>Plagarised?</option><option value='Yes'>Yes</option><option value='No'>No</option>");
+                  } else if (val == "No") {
+                      $("#plag").html("<option value=''>Plagarised?</option><option value='Yes'>Yes</option><option selected value='No'>No</option>");
+                  } else if (val == "item0") {
+                      $("#plag").html("<option value=''>Plagarised?</option><option value='Yes'>Yes</option><option value='No'>No</option>");
+                  }
+              });
+          });
+          </script>
+
+        <select name="dead" id="dead">
+          <option selected>Deadline of your Project?</option>
+          <option value="<10 Days" name="dead"><10 Days</option>
+          <option value=">10 Days" name="dead">>10 Days</option>
+        </select>
+        <center>{{war}}</center>
+      </div><center>
+      <a>
+        <button type="submit">Predict Price</button>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a></center>
+
+<style>
+button {
+	background-color: transparent;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px
+}
+</style>
+    </form>
+  </div>
+
+   
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

@@ -1,0 +1,25 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<select name="domain" id="type">
+    <option name="domain" value="item0">Select Your Domain</option>
+    <option name="domain" value="Artificial Intelligence">Artificial Intelligence</option>
+    <option name="domain" value="Electronics">Electronics</option>
+</select>
+
+<select name="course" id="size">
+    <option value="">Select Your Sub Domain</option>
+</select>
+
+<script>
+$(document).ready(function () {
+    $("#type").change(function () {
+        var val = $(this).val();
+        if (val == "Artificial Intelligence") {
+            $("#size").html("<option value=''>Select Your Sub Domain</option><option value='Computer Vision'>Computer Vision</option><option value='Natural Language Processing'>Natural Language Processing</option><option value='Deep Learning'>Deep Learning</option>");
+        } else if (val == "Electronics") {
+            $("#size").html("<option value=''>Select Your Sub Domain</option><option value='Embedded Systems'>Embedded Systems</option><option value='IOT + AI'>IOT + AI</option><option value='Robotics'>Robotics</option><option value='MATLAB'>MATLAB</option><option value='HFSS'>HFSS</option>");
+        } else if (val == "item0") {
+            $("#size").html("<option value=''>Select Your Sub Domain</option>");
+        }
+    });
+});
+</script>
